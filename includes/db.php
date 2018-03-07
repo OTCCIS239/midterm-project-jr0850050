@@ -14,3 +14,20 @@
 // Make sure to include support for DB_PORT. See the
 // PHP Documentation for the MySQL PDO DSN:
 // http://php.net/manual/en/ref.pdo-mysql.connection.php
+
+//TODO - move credentials outta here.
+
+$dsn = "mysql:host=localhost;dbname=guitars";
+$username = 'guitars';
+$password = '3RyqLoK4ZHZI68Gnl0EEYJUSTAhB1rKj';
+$conn = new PDO($dsn, $username, $password);
+
+    try {
+        $db = new PDO($dsn, $username, $password);
+    } catch (PDOException $e) {
+        $error_message = $e->getMessage();
+        include('/database_error.php');
+        exit();
+    }
+
+?>

@@ -7,6 +7,8 @@
 require_once('./includes/init.php');
 
 
+//WARNING TO SELF: QUERIES ON PAGES ARE INCORRECT. REVIEW https://otc.instructure.com/courses/11520/assignments/348335?module_item_id=662878
+
 
 ?>
 <!DOCTYPE html>
@@ -25,6 +27,11 @@ require_once('./includes/init.php');
             <a href="pages/all_products.php">Products</a>
             <a href="pages/unshipped_orders.php">Unshipped orders</a>
             <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+        </div>
+        <div>
+          <p>
+            Please be warned: This is a administration environment for the store. Under no circumstances should a customer be accessing these databases.
+          </p>
         </div>
     </body>
 </html>

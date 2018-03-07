@@ -4,8 +4,16 @@
 // development experience nicer! If your PHP throws an
 // error, we will show you exactly what went wrong!
 require_once('../includes/init.php');
+require_once('../includes/db.php');
 
 // Here you might connect to the database and show off some of your newest guitars.
+
+$queryAllOrders = 'SELECT `orderID`, `customerID`, `orderDate`, `shipAmount`, `taxAmount`, `shipDate`, `shipAddressID` FROM orders
+                        ORDER BY orderID';
+$statement1 = $db->prepare($queryAllOrders);
+$statement1->execute();
+$categories = $statement1->fetchAll();
+$statement1->closeCursor();
 
 ?>
 <!DOCTYPE html>
@@ -15,7 +23,7 @@ require_once('../includes/init.php');
         <meta name="author" content="Joshua Ratliff">
         <link rel="stylesheet" href="/styles.css">
         <script type="text/javascript" src="/mysrc.js"></script>
-        <title>Guitar Shop - Home Page</title>
+        <title>Guitar Shop - All Orders</title>
     </head>
     <body>
         <div class="topnav" id="myTopnav">
